@@ -53,7 +53,7 @@ def webServer(port=13331):
       #Send everything as one send command, do not send one line/item at a time!
 
       # Fill in start
-      connectionSocket.send(outputdata)
+      connectionSocket.sendall(outputdata)
 
       # Fill in end
         
@@ -67,7 +67,7 @@ def webServer(port=13331):
       outputdata += b"Content-Type: text/html; charset=UTF-8\r\n"
       outputdata += b"\r\n"
       outputdata += b"<html><head></head><body><h1>404 Not Found</h1></body></html>"
-      connectionSocket.send(outputdata)
+      connectionSocket.sendall(outputdata)
       #Fill in end
 
 
